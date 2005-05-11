@@ -1,0 +1,17 @@
+.TH detach 1
+.SH NAME
+.B detach
+\- run a command after detaching from the terminal
+.SH SYNOPSIS
+\fBdetach\fR \fIcommand\fR [\fIargs\fR]
+
+Forks a new process, detaches is from the terminal, and executes
+command with the specified arguments.
+.SH EXAMPLE
+.B detach xterm
+
+Start an xterm that will not be closed when the current shell exits.
+.SH AUTHOR
+.B detach
+was written by Robbert Haarman. See http://inglorion.net/ for contact
+information.
