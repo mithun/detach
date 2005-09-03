@@ -55,8 +55,11 @@ int main(int argc, char **argv) {
 	}
 
 	if(infile) replacefd(0, infile, O_RDONLY, 0666);
+	else close(0);
 	if(outfile) replacefd(1, outfile, O_WRONLY | O_CREAT | O_TRUNC, 0666);
+	else close(1);
 	if(errfile) replacefd(2, errfile, O_WRONLY | O_CREAT | O_TRUNC, 0666);
+	else close(2);
 	setsid();
 
 	execvp(argv[command_start], &argv[command_start]);
